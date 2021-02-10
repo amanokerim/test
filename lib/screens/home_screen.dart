@@ -37,7 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 fillColor: Colors.white,
                 labelText: "Филтр",
               ),
-              onChanged: (value) => _bloc.add(value),
+              onChanged: (value) {
+                // закрываем всех если открыто
+                if (selected != -1) setState(() => selected = -1);
+                // филтрируем
+                _bloc.add(value);
+              },
             ),
           ),
           Expanded(

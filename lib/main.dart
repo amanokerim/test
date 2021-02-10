@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(fontSize: 18.0),
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (context) => HomeBloc([]),
         child: HomeScreen(),
